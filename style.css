@@ -17,19 +17,19 @@ html {
 .app {
     background: linear-gradient(120deg,#64E8DE,#8A64EB);
     background-repeat: no-repeat;
-    min-height: 100vh;
+    min-height: 110vh;
 }
 
 .card {
     position: absolute;
     max-width: 680px;
     width: 100%;
-    height: auto;
+    height: 100%;
     display: flex;
     margin: 0 auto;
     left: 0;
     right: 0;
-    padding: 25px 12px;
+    padding: 25px 12px 50px;
     align-items: center;
     justify-content: center;
     flex-direction: column;
@@ -148,7 +148,7 @@ html {
 .card__item .card__link .link__icon .fa {
     display: block;
     margin: 0 auto;
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     font-weight: 500;
     line-height: 32px;
 }
@@ -160,7 +160,8 @@ html {
     line-height: 1.6rem;
 }
 .card__footer {
-    padding: 100px 0 0;
+    position: relative;
+    margin-top: 100px;
     display: flex;
     align-content: center;
     justify-content: center;
