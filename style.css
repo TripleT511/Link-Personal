@@ -58,9 +58,9 @@ html {
 }
 .card__title--name h1 {
     color: var(--white-color);
-    font-size: 2.8rem;
+    font-size: 2rem;
     font-weight: 600;
-    line-height: 2.8rem;
+    line-height: 2rem;
     text-align: center;
 }
 
@@ -148,16 +148,16 @@ html {
 .card__item .card__link .link__icon .fa {
     display: block;
     margin: 0 auto;
-    font-size: 2.4rem;
+    font-size: 1.6rem;
     font-weight: 500;
     line-height: 32px;
 }
 .card__item .card__link h2 {
-    font-size: 2.2rem;
+    font-size: 1.6rem;
     font-weight: 500;
     margin: 0 auto;
     text-align: center;
-    line-height: 2.2rem;
+    line-height: 1.6rem;
 }
 .card__footer {
     padding: 100px 0 0;
@@ -170,7 +170,7 @@ html {
     font-size: 1.8rem;
     font-weight: 500;
     color: var(--white-color);
-    line-height: 2rem;
+    line-height: 1.8rem;
 }
 ::-webkit-scrollbar {
     width: 12px;
