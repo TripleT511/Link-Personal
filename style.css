@@ -7,6 +7,12 @@
 html {
     font-size: 62.5%;
     line-height: 1.625rem;
+    height: 100%;
+}
+body {
+    background: linear-gradient(120deg,#64E8DE,#8A64EB);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 :root {
     --white-color: #222222;
@@ -14,22 +20,15 @@ html {
     --white-color: #fff;
 
 }
-.app {
-    background: linear-gradient(120deg,#64E8DE,#8A64EB);
-    background-repeat: no-repeat;
-    min-height: 110vh;
-}
-
 .card {
     position: absolute;
     max-width: 680px;
     width: 100%;
-    height: 100%;
     display: flex;
     margin: 0 auto;
     left: 0;
     right: 0;
-    padding: 25px 12px 50px;
+    padding: 25px 12px;
     align-items: center;
     justify-content: center;
     flex-direction: column;
