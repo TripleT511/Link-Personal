@@ -9,16 +9,16 @@ html {
     line-height: 1.625rem;
     height: 100%;
 }
+
+:root {
+    --white-color: #fff;
+    --first-color: #8A00FF;
+    --second-color: #00F0FF;
+}
 body {
-    background: linear-gradient(120deg,#64E8DE,#8A64EB);
+    background: linear-gradient(120deg,var(--first-color),var(--second-color));
     background-repeat: no-repeat;
     background-attachment: fixed;
-}
-:root {
-    --white-color: #222222;
-    --white-color: #7777777;
-    --white-color: #fff;
-
 }
 .card {
     position: absolute;
@@ -48,7 +48,7 @@ body {
     width: 100%;
     height: auto;
     border-radius: 50%;
-    border: 2px solid #fff;
+    border: 2px solid var(--white-color);
 }
 .card__title--name {
     display: flex;
@@ -122,9 +122,7 @@ body {
     background: var(--white-color);
     box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
 }
-.card__item:hover .card__link {
-    color: #64E8DE;
-}
+
 .card__item .card__link {
     position: relative;
     display: flex;
@@ -147,16 +145,28 @@ body {
 .card__item .card__link .link__icon .fa {
     display: block;
     margin: 0 auto;
-    font-size: 1.8rem;
+    font-size: 2.2rem;
     font-weight: 500;
     line-height: 32px;
+}
+.card__item:hover .card__link .link__icon .fa {
+    background-image: -webkit-linear-gradient(120deg,
+     var(--second-color),var(--first-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 .card__item .card__link h2 {
     font-size: 1.6rem;
     font-weight: 500;
     margin: 0 auto;
     text-align: center;
-    line-height: 1.6rem;
+    line-height: 2.1rem;
+}
+.card__item:hover .card__link h2 {
+    background-image: -webkit-linear-gradient(120deg,
+     var(--second-color),var(--first-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 .card__footer {
     position: relative;
@@ -172,10 +182,4 @@ body {
     color: var(--white-color);
     line-height: 1.8rem;
 }
-::-webkit-scrollbar {
-    width: 12px;
-}
-::-webkit-scrollbar-thumb {
-    background: linear-gradient(#64E8DE,#8A64EB);
-    background: --webkit-gradient(#64E8DE,#8A64EB);
-}
+
