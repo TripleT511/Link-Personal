@@ -83,6 +83,7 @@ body {
     display: flex;
     flex-direction: column;
     width: 100%;
+    margin-top: 20px;
 }
 .card__list {
     list-style: none;
@@ -102,25 +103,28 @@ body {
 .card__item::after {
     position: absolute;
     content: "";
+    margin: auto;
     top: 0;
     left: 0;
-    width: 15%;
+    right: 0;
+    bottom: 0;
+    width: 0%;
+    opacity: 0;
     height: 100%;
-    background: rgba(255, 255, 255, 0.5);
+    background: var(--white-color);
     transition: all .3s ease 0s;
     -moz-transition: all .3s ease 0s;
     -webkit-transition: all .3s ease 0s;
     -o-transition: all .3s ease 0s;
-    transform: skewX(45deg) translateX(-200%);
+    z-index: -1;
 }
 .card__item:hover::after {
-    transform: skewX(45deg) translateX(700%);
+    opacity: 1;
+    width: 100%;
 }
 .card__item:hover {
-    z-index: 2;
-    transform: translateY(-2px);
     background: var(--white-color);
-    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+    box-shadow: 3px 3px 30px rgba(0, 0, 0, 0.2);
 }
 
 .card__item .card__link {
