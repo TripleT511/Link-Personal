@@ -36,10 +36,11 @@ html {
 .app.dark {
     background: var(--bg-dark);
 }
+
 .card {
-    position: absolute;
-    max-width: 600px;
-    height: 380px;
+    position: fixed;
+    max-width: 350px;
+    height: fit-content;
     display: flex;
     margin: auto;
     top: 0;
@@ -58,6 +59,11 @@ html {
     -webkit-transition: all .3s linear;
     -o-transition: all .3s linear;
 }
+
+.app.dark .card::after {
+    transform: scale(1.01);
+    border-radius: 7px;
+}
 .app.dark .card {
     background: var(--card-dark);
     
@@ -69,13 +75,14 @@ html {
     justify-content: center;
 }
 .card__title--img {
-    width: 27%;
-    flex-shrink: 0;
+    width: 100px;
+    height: 100px;
 }
 .card__title--img img {
     width: 100%;
     height: auto;
     border-radius: 50%;
+    object-fit: cover;
 }
 .card__title--name {
     position: relative;
@@ -129,22 +136,39 @@ html {
 .app.dark .card__title--description p {
     color: var(--text-color-dark);
 }
-
+.mt-10 {
+    margin-top: 10px;
+}
 .card__body {
     width: 100%;
-    margin-top: 20px;
-}
-.card__list {
-    list-style: none;
     display: flex;
-    width: 100%;
     align-items: center;
     justify-content: center;
+}
+
+.row {
+    width: 100%;
+    display: flex;
     flex-wrap: wrap;
+    margin-left: -5px;
+    margin-right: -5px;
+}
+.col {
+    width: 100%;
+    position: relative;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.col-lg-3 {
+    display: flex;
+    justify-content: center;
+    flex: 0 0 25%;
+    max-width: 25%;
 }
 .card__item {
+    width: 50px;
+    height: 50px;
     position: relative;
-    margin-left: 15px;
     background: var(--blue-color-2);
     border-radius: 50%;
     transition: all .3s ease 0s;
@@ -175,9 +199,6 @@ html {
 .card__item:hover::before {
     transform: scale(1);
 }
-.card__item:first-child {
-    margin-left: 0;
-}
 
 .card__link {
     position: relative;
@@ -202,8 +223,8 @@ html {
     align-items: center;
     justify-content: center;
     content: "";
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 35px;
     top: 20px;
     right: 20px;
     border-radius: 50%;
@@ -218,14 +239,14 @@ html {
     background: var(--bg-dark);
 }
 .toggle__theme .fa {
-    font-size: 2rem;
+    font-size: 2.2rem;
     color: var(--blue-color);
 }
-/* .card__footer p {
-    text-align: center;
-    font-size: 1.8rem;
-    font-weight: 500;
-    color: var(--primary-color);
-    line-height: 1.8rem;
-} */
+@media screen and (max-width: 370px) {
+    .pd-10 {
+    margin: auto 10px;
+    }
+
+}
+
 
