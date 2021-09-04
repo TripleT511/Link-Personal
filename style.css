@@ -24,11 +24,13 @@ html {
     --outer-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
         -6px -6px 10px -1px rgba(255, 255, 255, 0.7);
     --outer-shadow-o: inset 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
-       inset -6px -6px 10px -1px rgba(255, 255, 255, 0.7);
+       inset -6px -6px 10px -1px rgba(255, 255, 255, 0.7)
+       ;
     --outer-shadow-dark: 6px 6px 10px -1px rgba(0, 0, 0, 0.3),
         -6px -6px 10px -1px rgba(255, 255, 255, 0.1);
     --outer-shadow-dark-o: inset 6px 6px 10px -1px rgba(0, 0, 0, 0.3),
        inset -6px -6px 10px -1px rgba(255, 255, 255, 0.1);
+    --colorlinear: -webkit-linear-gradient(-45deg,#1877f2,#3c00ac);
 }
 
 .app {
@@ -212,8 +214,11 @@ html {
 }
 
 .card__item:hover {
+    transform: rotate(360deg);
     box-shadow: var(--outer-shadow-dark-o);
 }
+
+
 
 .app.dark .card__item:hover {
     box-shadow: var(--outer-shadow-dark-o);
@@ -231,7 +236,9 @@ html {
     justify-content: center;
     width: 50px;
     height: 50px;
-    color: var(--blue-color);
+    background-image: var(--colorlinear);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .link__icon .fa {
@@ -247,7 +254,9 @@ html {
     height: 35px;
     top: 20px;
     border-radius: 50%;
-    background: var(--bg-main);
+    background-image: var(--colorlinear);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     box-shadow: var(--outer-shadow);
     cursor: pointer;
     transition: all .3s linear;
@@ -264,7 +273,7 @@ html {
 }
 
 .app.dark .toggle__theme, .app.dark .toggle__back {
-    background: var(--bg-dark);
+
     box-shadow: var(--outer-shadow-dark);
 }
 
@@ -281,7 +290,7 @@ html {
     left: 20px;
 }
 .toggle__back .fa {
-    font-size: 1.8rem;
+    font-size: 2rem;
     color: var(--blue-color);
 }
 .button__list {
