@@ -314,6 +314,7 @@ html {
 .app.dark .button {
     background: var(--bg-dark);
     box-shadow: var(--outer-shadow-dark);
+    color: var(--text-color-dark);
 }
 .button:hover {
     box-shadow: var(--outer-shadow-o);
