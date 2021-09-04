@@ -13,3 +13,4 @@ toggle.addEventListener("click", () => {
         card.classList.remove("dark");
     }
 })
+

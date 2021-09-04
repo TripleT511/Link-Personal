@@ -13,7 +13,7 @@ html {
 
 :root {
     --white-color: #fff;
-    --bg-main: #f0f8ff;
+    --bg-main: #e3edf7;
     --bg-dark: #18191A;
     --card-dark: #242526;
     --primary-color: #050505;
@@ -21,6 +21,14 @@ html {
     --text-color-dark: #B0B3B8;
     --blue-color: #1877f2;
     --blue-color-2: #e9f5ff;
+    --outer-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
+        -6px -6px 10px -1px rgba(255, 255, 255, 0.7);
+    --outer-shadow-o: inset 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
+       inset -6px -6px 10px -1px rgba(255, 255, 255, 0.7);
+    --outer-shadow-dark: 6px 6px 10px -1px rgba(0, 0, 0, 0.3),
+        -6px -6px 10px -1px rgba(255, 255, 255, 0.1);
+    --outer-shadow-dark-o: inset 6px 6px 10px -1px rgba(0, 0, 0, 0.3),
+       inset -6px -6px 10px -1px rgba(255, 255, 255, 0.1);
 }
 
 .app {
@@ -53,7 +61,8 @@ html {
     justify-content: center;
     background: var(--white-color);
     border-radius: 7px;
-    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
+    background: var(--bg-main);
+    box-shadow: var(--outer-shadow);
     transition: all .3s linear;
     -moz-transition: all .3s linear;
     -webkit-transition: all .3s linear;
@@ -65,8 +74,8 @@ html {
     border-radius: 7px;
 }
 .app.dark .card {
-    background: var(--card-dark);
-    
+    background: var(--bg-dark);
+    box-shadow: var(--outer-shadow-dark);
 }
 .card__title {
     display: flex;
@@ -77,10 +86,22 @@ html {
 .card__title--img {
     width: 100px;
     height: 100px;
+    border-radius: 50%;
+    box-shadow: var(--outer-shadow);
+    border: 5px solid var(--bg-main);
+    transition: all .3s linear;
+    -moz-transition: all .3s linear;
+    -webkit-transition: all .3s linear;
+    -o-transition: all .3s linear;
+}
+
+.app.dark .card__title--img {
+    border: 6px solid var(--bg-dark);
+    box-shadow: var(--outer-shadow-dark);
 }
 .card__title--img img {
     width: 100%;
-    height: auto;
+    height: 100%;
     border-radius: 50%;
     object-fit: cover;
 }
@@ -98,6 +119,7 @@ html {
     font-weight: 600;
     line-height: 2.2rem;
     text-align: center;
+    
 }
 .app.dark .card__title--name h1 {
     color: var(--white-color);
@@ -128,7 +150,7 @@ html {
     position: relative;
     text-align: center;
     font-size: 1.8rem;
-    font-weight: 500;
+    font-weight: 400;
     color: var(--text-color);
     line-height: 1.8rem;
 }
@@ -139,6 +161,10 @@ html {
 .mt-10 {
     margin-top: 10px;
 }
+.mb-10 {
+    margin-bottom: 10px;
+}
+
 .card__body {
     width: 100%;
     display: flex;
@@ -170,7 +196,8 @@ html {
     width: 50px;
     height: 50px;
     position: relative;
-    background: var(--blue-color-2);
+    background: var(--bg-main);
+    box-shadow: var(--outer-shadow);
     border-radius: 50%;
     transition: all .3s ease 0s;
     -moz-transition: all .3s ease 0s;
@@ -178,33 +205,25 @@ html {
     -o-transition: all .3s ease 0s;
     overflow: hidden;
 }
+
 .app.dark .card__item {
     background: var(--bg-dark);
+    box-shadow: var(--outer-shadow-dark);
 }
-.card__item::before {
-    position: absolute;
-    content: "";
-    background: var(--blue-color);
-    width: 100%;
-    height: 100%;
-    transform: scale(0);
-    border-radius: 50%;
-    transition: all .3s ease 0s;
-    -moz-transition: all .3s ease 0s;
-    -webkit-transition: all .3s ease 0s;
-    -o-transition: all .3s ease 0s;
+
+.card__item:hover {
+    box-shadow: var(--outer-shadow-dark-o);
 }
-.card__item:hover .link__icon {
-    color: var(--white-color);
-}
-.card__item:hover::before {
-    transform: scale(1);
+
+.app.dark .card__item:hover {
+    box-shadow: var(--outer-shadow-dark-o);
 }
 
 .card__link {
     position: relative;
     text-decoration: none;
 }
+
 .link__icon {
     position: relative;
     display: flex;
@@ -218,7 +237,7 @@ html {
 .link__icon .fa {
     font-size: 2.5rem;
 }
-.toggle__theme {
+.toggle {
     position: absolute;
     display: flex;
     align-items: center;
@@ -227,24 +246,88 @@ html {
     width: 35px;
     height: 35px;
     top: 20px;
-    right: 20px;
     border-radius: 50%;
-    background: var(--blue-color-2);
+    background: var(--bg-main);
+    box-shadow: var(--outer-shadow);
     cursor: pointer;
     transition: all .3s linear;
     -moz-transition: all .3s linear;
     -webkit-transition: all .3s linear;
     -o-transition: all .3s linear;
 }
-.app.dark .toggle__theme {
-    background: var(--bg-dark);
+.toggle__theme {
+    right: 20px;
 }
+
+.toggle__theme:hover, .toggle__back:hover {
+    box-shadow: var(--outer-shadow-o);
+}
+
+.app.dark .toggle__theme, .app.dark .toggle__back {
+    background: var(--bg-dark);
+    box-shadow: var(--outer-shadow-dark);
+}
+
+.app.dark .toggle__theme:hover,
+.app.dark .toggle__back:hover {
+    box-shadow: var(--outer-shadow-dark-o);
+}
+
 .toggle__theme .fa {
     font-size: 2.2rem;
     color: var(--blue-color);
 }
+.toggle__back {
+    left: 20px;
+}
+.toggle__back .fa {
+    font-size: 1.8rem;
+    color: var(--blue-color);
+}
+.button__list {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 20px;
+    text-align: center;
+    background: var(--bg-main);
+    box-shadow: var(--outer-shadow);
+    color: var(--text-color);
+    font-size: 1.8rem;
+    font-weight: 400;
+    border-radius: 7px;
+    transition: all .3s linear;
+    -moz-transition: all .3s linear;
+    -webkit-transition: all .3s linear;
+    -o-transition: all .3s linear;
+    cursor: pointer;
+}
+.app.dark .button {
+    background: var(--bg-dark);
+    box-shadow: var(--outer-shadow-dark);
+}
+.button:hover {
+    box-shadow: var(--outer-shadow-o);
+}
+.app.dark .button:hover {
+    box-shadow: var(--outer-shadow-dark-o);
+}
+.col-lg-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+
 @media screen and (max-width: 370px) {
-    .pd-10 {
+    .mg-10 {
     margin: auto 10px;
     }
 
