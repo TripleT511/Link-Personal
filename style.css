@@ -104,7 +104,7 @@ html {
 }
 
 .app.dark .card__title--img {
-    border: 6px solid var(--bg-dark);
+    border: 5px solid var(--bg-dark);
     box-shadow: var(--outer-shadow-dark);
 }
 .card__title--img img {
@@ -265,6 +265,7 @@ html {
 .link__icon .fa-twitter {
     color: var(--icon-twitter);
 }
+
 .toggle {
     position: absolute;
     display: flex;
@@ -275,7 +276,7 @@ html {
     height: 35px;
     top: 20px;
     border-radius: 50%;
-    color: var(--blue-color);
+    color: var(--icon-github);
     box-shadow: var(--outer-shadow);
     border: 2px solid var(--bg-main);
     cursor: pointer;
@@ -289,6 +290,7 @@ html {
 }
 
 .app.dark .toggle {
+    color: var(--bg-main);
     border: 2px solid var(--bg-dark);
 }
 .toggle__theme:hover, .toggle__back:hover {
@@ -306,14 +308,12 @@ html {
 
 .toggle__theme .fa {
     font-size: 2.2rem;
-    color: var(--blue-color);
 }
 .toggle__back {
     left: 20px;
 }
 .toggle__back .fa {
     font-size: 2rem;
-    color: var(--blue-color);
 }
 .button__list {
     position: relative;
