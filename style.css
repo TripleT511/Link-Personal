@@ -23,14 +23,20 @@ html {
     --blue-color-2: #e9f5ff;
     --outer-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
         -6px -6px 10px -1px rgba(255, 255, 255, 0.7);
-    --outer-shadow-o: inset 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
+    --outer-shadow-o: 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
+        -6px -6px 10px -1px rgba(255, 255, 255, 0.7), inset 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
        inset -6px -6px 10px -1px rgba(255, 255, 255, 0.7)
        ;
     --outer-shadow-dark: 6px 6px 10px -1px rgba(0, 0, 0, 0.3),
         -6px -6px 10px -1px rgba(255, 255, 255, 0.1);
-    --outer-shadow-dark-o: inset 6px 6px 10px -1px rgba(0, 0, 0, 0.3),
+    --outer-shadow-dark-o: 6px 6px 10px -1px rgba(0, 0, 0, 0.3),
+        -6px -6px 10px -1px rgba(255, 255, 255, 0.1), inset 6px 6px 10px -1px rgba(0, 0, 0, 0.3),
        inset -6px -6px 10px -1px rgba(255, 255, 255, 0.1);
-    --colorlinear: -webkit-linear-gradient(-45deg,#1877f2,#3c00ac);
+    --icon-fb: #4267B2;
+    --icon-insta: #FB3958;
+    --icon-github: #333;
+    --icon-youtube: #FF0000;
+    --icon-twitter: #00acee;
 }
 
 .app {
@@ -195,9 +201,13 @@ html {
     max-width: 25%;
 }
 .card__item {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid var(--bg-main);
     width: 50px;
     height: 50px;
-    position: relative;
     background: var(--bg-main);
     box-shadow: var(--outer-shadow);
     border-radius: 50%;
@@ -211,10 +221,10 @@ html {
 .app.dark .card__item {
     background: var(--bg-dark);
     box-shadow: var(--outer-shadow-dark);
+    border: 2px solid var(--bg-dark);
 }
 
 .card__item:hover {
-    transform: rotate(360deg);
     box-shadow: var(--outer-shadow-dark-o);
 }
 
@@ -236,13 +246,24 @@ html {
     justify-content: center;
     width: 50px;
     height: 50px;
-    background-image: var(--colorlinear);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: var(--blue-color);
+
 }
 
 .link__icon .fa {
     font-size: 2.5rem;
+}
+.link__icon .fa-github {
+    color: var(--icon-github);
+}
+.app.dark .link__icon .fa-github {
+    color: var(--bg-main);
+}
+.link__icon .fa-instagram {
+    color: var(--icon-insta);
+}
+.link__icon .fa-twitter {
+    color: var(--icon-twitter);
 }
 .toggle {
     position: absolute;
@@ -254,10 +275,9 @@ html {
     height: 35px;
     top: 20px;
     border-radius: 50%;
-    background-image: var(--colorlinear);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: var(--blue-color);
     box-shadow: var(--outer-shadow);
+    border: 2px solid var(--bg-main);
     cursor: pointer;
     transition: all .3s linear;
     -moz-transition: all .3s linear;
@@ -268,12 +288,14 @@ html {
     right: 20px;
 }
 
+.app.dark .toggle {
+    border: 2px solid var(--bg-dark);
+}
 .toggle__theme:hover, .toggle__back:hover {
     box-shadow: var(--outer-shadow-o);
 }
 
 .app.dark .toggle__theme, .app.dark .toggle__back {
-
     box-shadow: var(--outer-shadow-dark);
 }
 
@@ -311,6 +333,7 @@ html {
     background: var(--bg-main);
     box-shadow: var(--outer-shadow);
     color: var(--text-color);
+    border: 2px solid var(--bg-main);
     font-size: 1.8rem;
     font-weight: 400;
     border-radius: 7px;
@@ -324,6 +347,7 @@ html {
     background: var(--bg-dark);
     box-shadow: var(--outer-shadow-dark);
     color: var(--text-color-dark);
+    border: 2px solid var(--bg-dark);
 }
 .button:hover {
     box-shadow: var(--outer-shadow-o);
