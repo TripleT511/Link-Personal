@@ -15,7 +15,7 @@ html {
     --white-color: #fff;
     --bg-main: #e3edf7;
     --bg-dark: #303234;
-    --primary-color: #050505;
+    --primary-color: #31344b;
     --text-color: #777777;
     --text-color-dark: #B0B3B8;
     --blue-color: #1877f2;
@@ -131,19 +131,26 @@ html {
 .app.dark .card__title--name h1 {
     color: var(--white-color);
 }
-.card__title--name .fa {
+.card__title--name .veri__check {
     position: absolute;
+    width: 20px;
+    height: 20px;
     left: 100%;
     top: 0;
     bottom: 0;
-    margin: 0 auto;
-    color: var(--blue-color);
-    font-size: 2.2rem;
-    line-height: 2.2rem;
+    margin: auto;
+    color: var(--white-color);
+    background: var(--blue-color);
+    border: 2px solid var(--white-color);
+    text-align: center;
+    border-radius: 50%;
     margin-left: 5px;
     cursor: pointer;
 }
-
+.veri__check .fas {
+    line-height: 18px;
+    font-size: 1.1rem;
+}
 .card__title--description {
     position: relative;
     display: flex;
@@ -214,6 +221,7 @@ html {
     -webkit-transition: all .3s ease 0s;
     -o-transition: all .3s ease 0s;
     overflow: hidden;
+    cursor: pointer;
 }
 
 .app.dark .card__item {
@@ -248,7 +256,7 @@ html {
 
 }
 
-.link__icon .fa {
+.link__icon .fab {
     font-size: 2.5rem;
 }
 .link__icon .fa-github {
@@ -258,7 +266,7 @@ html {
     color: var(--bg-main);
 }
 .link__icon .fa-instagram {
-    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 70%,#285AEB 90%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -276,7 +284,7 @@ html {
     height: 35px;
     top: 20px;
     border-radius: 50%;
-    color: var(--icon-github);
+    color: var(--primary-color);
     box-shadow: var(--outer-shadow);
     border: 2px solid var(--bg-main);
     cursor: pointer;
@@ -306,15 +314,14 @@ html {
     box-shadow: var(--outer-shadow-dark-o);
 }
 
-.toggle__theme .fa {
-    font-size: 2.2rem;
+.toggle__theme .fas,
+.toggle__back .fas {
+    font-size: 2rem;
 }
 .toggle__back {
     left: 20px;
 }
-.toggle__back .fa {
-    font-size: 2rem;
-}
+
 .button__list {
     position: relative;
     width: 100%;
@@ -343,6 +350,7 @@ html {
     -o-transition: all .3s linear;
     cursor: pointer;
 }
+
 .app.dark .button {
     background: var(--bg-dark);
     box-shadow: var(--outer-shadow-dark);
@@ -351,6 +359,7 @@ html {
 }
 .button:hover {
     box-shadow: var(--outer-shadow-o);
+    color: var(--blue-color) !important;
 }
 .app.dark .button:hover {
     box-shadow: var(--outer-shadow-dark-o);
@@ -360,6 +369,47 @@ html {
     max-width: 50%;
 }
 
+.card__footer {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    width: 100%;
+}
+.card__footer .footer__item {
+    flex: 0 0 33.33333%;
+    max-width: 33.33333%;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    margin-top: 10px;
+    cursor: pointer;
+    
+}
+.card__footer .footer__item:nth-child(1), 
+.card__footer .footer__item:nth-child(2) {
+    border-right: 1.5px solid var(--text-color);
+}
+.footer__item span {
+    font-size: 1.8rem;
+    color: var(--text-color);
+    transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -webkit-transition: all .3s ease;
+    -o-transition: all .3s ease;
+}
+.app.dark .footer__item span {
+    color: var(--text-color-dark);
+}
+.card__footer .footer__item:nth-child(1):hover span, .card__footer .footer__item:nth-child(2):hover span, .card__footer .footer__item:nth-child(3):hover span {
+    color: var(--blue-color);
+}
+
+.footer__item span .fa, 
+.footer__item span .fas {
+    margin-right: 5px;
+}
 @media screen and (max-width: 370px) {
     .mg-10 {
     margin: auto 10px;
