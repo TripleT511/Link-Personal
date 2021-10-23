@@ -55,7 +55,7 @@ html {
 .card {
     position: fixed;
     max-width: 350px;
-    height: fit-content;
+    height: 380px;
     display: flex;
     margin: auto;
     top: 0;
@@ -409,6 +409,95 @@ html {
 .footer__item span .fa, 
 .footer__item span .fas {
     margin-right: 5px;
+}
+.toast {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    max-width: 280px;
+    height: fit-content;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    margin: auto;
+    padding: 10px;
+    border-radius: 7px;
+    background: var(--bg-main);
+    box-shadow: var(--outer-shadow);
+    z-index: 999;
+    transform: translateX(calc(300% + 280px));
+    animation: slideToLeft ease .3s;
+    will-change: opacity, transform;
+}
+@keyframes slideToLeft {
+    from {
+        transform: translateX(calc(300% + 280px));
+        opacity: 0;
+    } to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+     to {
+        opacity: 1;
+    }
+}
+.toast .toast__icon {
+    width: 38px;
+    height: 38px;
+    background: var(--white-color);
+    border-radius: 50%;
+}
+.toast .toast__icon .fas {
+    font-size: 3.2rem;
+    line-height: 39px;
+}
+.toast.success .toast__icon .fas {
+    color: rgb(4, 248, 4);
+}
+.toast.warning .toast__icon .fas {
+    color: var(--icon-youtube);
+}
+.toast .toast__body .toast__body--title {
+    font-size: 2.2rem;
+    line-height: 2.2rem;
+    font-weight: 500;
+    color: rgb(4, 248, 4);
+}
+.toast .toast__body .toast__body--description {
+    font-size: 1.8rem;
+    line-height: 2.2rem;
+    font-weight: 400;
+    color: var(--text-color);
+}
+.toast .toast__close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    background: var(--bg-main);
+    color: var(--text-color);
+    border-radius: 7px;
+    box-shadow: var(--outer-shadow);
+    cursor: pointer;
+}
+.toast .toast__close:hover {
+    box-shadow: var(--outer-shadow-o);
+}
+.toast .toast__close .fas {
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+.toast .toast__close span {
+    margin-left: 5px;
+    font-size: 1.8rem;
+    font-weight: 500;
 }
 @media screen and (max-width: 370px) {
     .mg-10 {
