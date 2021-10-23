@@ -11,6 +11,7 @@ toggle.addEventListener("click", () => {
         theme.classList.remove("fa-sun");
         theme.classList.add("fa-moon");
         card.classList.remove("dark");
+
     }
 })
 
